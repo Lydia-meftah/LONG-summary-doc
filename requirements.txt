@@ -1,0 +1,8 @@
+Flask
+Werkzeug
+python-dotenv
+flask_httpauth
+transformers
+torch
+PyPDF2
+python-docx

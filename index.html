@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <title>Résumé M&A SaaS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: linear-gradient(120deg, #101f3c 60%, #234ed8 100%);
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 480px;
+            margin: 60px auto 0 auto;
+            background: rgba(16,31,60, 0.98);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(20,30,70,0.15);
+            padding: 36px 32px 30px 32px;
+            border: 2px solid #f4b600;
+        }
+        h1 {
+            color: #f4b600;
+            font-size: 2.1rem;
+            margin-bottom: 10px;
+        }
+        label {
+            color: #f4b600;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            font-size: 1.12rem;
+        }
+        input[type="file"] {
+            background: #fff;
+            color: #234ed8;
+            border: 2px solid #234ed8;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 18px 0;
+            width: 100%;
+        }
+        button {
+            background: linear-gradient(90deg, #234ed8 70%, #f4b600 120%);
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 12px 26px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(20,30,70,0.11);
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background .2s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #101f3c 70%, #f4b600 120%);
+            color: #f4b600;
+        }
+        .messages {
+            margin: 16px 0;
+            padding: 12px 16px;
+            border-radius: 7px;
+            background: #fff;
+            color: #234ed8;
+            font-weight: 600;
+            border-left: 4px solid #f4b600;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 18px 7px; margin: 20px 0; }
+        }
+        .footer {
+            margin-top: 36px;
+            text-align: center;
+            color: #fff;
+            font-size: 0.96em;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Résumé M&A <span style="color:#234ed8">SaaS</span></h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="fileInput">Vos documents (PDF ou Word)</label>
+            <input id="fileInput" type="file" name="files" multiple accept=".pdf,.docx" required>
+            <button type="submit">Analyser &nbsp;📄</button>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="messages">
+                {% for category, message in messages %}
+                  <div>{{ message }}</div>
+                {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        <div class="footer">
+            Powered by HuggingFace Transformers • <span style="color:#f4b600">Boutique M&amp;A</span>
+        </div>
+    </div>
+</body>
+</html>
