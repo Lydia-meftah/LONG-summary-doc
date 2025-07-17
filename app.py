@@ -25,7 +25,9 @@ def verify_password(username, password):
         return username
 
 # ---- PIPELINE TRANSFORMERS ----
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+
+# summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
 # ---- CHUNKING LONG TEXT ----
 def chunk_text(text, max_chunk=3500):
