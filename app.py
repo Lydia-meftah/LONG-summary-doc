@@ -25,8 +25,8 @@ def verify_password(username, password):
         return username
 
 # ---- PIPELINE TRANSFORMERS ----
-summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
-
+summarizer = pipeline("summarization", model="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+#summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
 # summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
 # ---- CHUNKING LONG TEXT ----
